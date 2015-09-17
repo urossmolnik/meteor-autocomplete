@@ -235,9 +235,13 @@ class @AutoComplete
 
     # Do this after the render
     if showing
-      Meteor.defer =>
+      Meteor.setTimeout (=>
         @positionContainer()
         @ensureSelection()
+      ), 100
+      #Meteor.defer =>
+      #  @positionContainer()
+      #  @ensureSelection()
 
     return showing
 
